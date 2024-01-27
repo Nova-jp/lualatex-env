@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  platexdev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: lualatex-image
+    container_name: lualatex-conttainer
+    volumes:
+      - type: bind
+        source: .
+        target: /lualatex-env
+    stdin_open: true
+    tty: true
+    working_dir: /lualatex-env
+
+
